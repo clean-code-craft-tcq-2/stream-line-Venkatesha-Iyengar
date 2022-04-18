@@ -3,6 +3,7 @@ from receiver import *
 
 class tdd_receiver_test(unittest.TestCase):
     def test_receiver(self):
-        ReadDataFromConsoleAndPrintStatistics()
+        AverageDataSize = 5
+        ReadDataFromConsoleAndPrintStatistics(AverageDataSize)
     
 unittest.main()

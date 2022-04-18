@@ -29,7 +29,7 @@ jobs:
           coverage run --branch sender.test.py
           coverage html
           coverage report
-      - name: Upload coverage
+      - name: Upload Sender test coverage
         uses: actions/upload-artifact@v2
         with:
           name: coverage
@@ -39,13 +39,11 @@ jobs:
       - name: Sender | Receiver
         run: |
           python sender.test.py | python receiver.test.py
-          
-      - name: Receiver - Run and collect coverage
-        run: |
           coverage run --branch receiver.test.py
           coverage html
           coverage report
-      - name: Upload coverage
+          
+      - name: Upload Receiver test coverage
         uses: actions/upload-artifact@v2
         with:
           name: coverage

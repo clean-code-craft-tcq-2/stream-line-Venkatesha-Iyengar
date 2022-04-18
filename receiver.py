@@ -23,6 +23,11 @@ def FindMovingAverageOfDataRead(DataReadFromConsole,AverageDataSize):
     MovingAvgOfDataRead = [round(sum(Data)/len(Data), 2) for Data in DataStream]
     return MovingAvgOfDataRead
 
+def ExtractBatteryParametersReadFromConsole(DataRead, BatteryParameter):
+    for index, Parameter in enumerate(BatteryParameters):
+        if Parameter == BatteryParameter:
+            return [BatteryParameterValue[index] for BatteryParameterValue in DataRead]
+
 def PrintStatisticsOnConsole(Parameter,RangeOfDataRead,MovingAvgOfDataRead):
   StringToBePrinted = f'{Parameter}:{RangeOfDataRead},{MovingAvgOfDataRead}'
   print(StringToBePrinted)
@@ -30,6 +35,7 @@ def PrintStatisticsOnConsole(Parameter,RangeOfDataRead,MovingAvgOfDataRead):
 def ReadDataFromConsoleAndPrintStatistics(AverageDataSize):
   DataReadFromConsole = ReadBatteryParameterDataFromConsole()
   for Parameter in BatteryParameters:
-    RangeOfDataRead = FindRangeFromDataRead(DataReadFromConsole)
-    MovingAvgOfDataRead = FindMovingAverageOfDataRead(DataReadFromConsole, AverageDataSize)
+    ExtractedDataReadFromConsole = ExtractBatteryParametersReadFromConsole(DataReadFromConsole, Parameter)
+    RangeOfDataRead = FindRangeFromDataRead(ExtractedDataReadFromConsole)
+    MovingAvgOfDataRead = FindMovingAverageOfDataRead(ExtractedDataReadFromConsole, AverageDataSize)
     PrintStatisticsOnConsole(Parameter,RangeOfDataRead,MovingAvgOfDataRead)

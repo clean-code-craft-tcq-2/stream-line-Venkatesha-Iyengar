@@ -36,7 +36,7 @@ jobs:
           path: ./htmlcov
           retention-days: 21
           
-      - name: Pipe
+      - name: Sender | Receiver
         run: |
           python sender.test.py | python receiver.test.py
           

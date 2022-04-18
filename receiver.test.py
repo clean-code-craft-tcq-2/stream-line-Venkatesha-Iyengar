@@ -5,6 +5,7 @@ class tdd_receiver_test(unittest.TestCase):
     def Test_Range_Receiver(self):
         AverageDataSize = 5
         DataReadFromConsole = [10,20,30,40,0,21,47,99,12]
+        ReadDataFromConsoleAndPrintStatistics(AverageDataSize)
         RangeOfDataRead = FindRangeFromDataRead(Data)
        # self.assertEqual(RangeOfDataRead,{'Minimum value of the parameter': 0, 'Maximum value of the parameter': 99})
         
@@ -14,8 +15,5 @@ class tdd_receiver_test(unittest.TestCase):
         MovingAvergae = FindMovingAverageOfDataRead(DataReadFromConsole,AverageDataSize)
         self.assertEqual(MovingAvergae,[20])
     
-    def Test_Receiver(self):
-        AverageDataSize = 5
-        ReadDataFromConsoleAndPrintStatistics(AverageDataSize)
         
 unittest.main()

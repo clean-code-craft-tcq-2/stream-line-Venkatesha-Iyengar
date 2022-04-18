@@ -7,7 +7,7 @@ def ReadBatteryParameterDataFromConsole():
     return LinesRead  
 
 def FindRangeFromDataRead(Data):
-    minimumValueAmongData = min(Data,default="NULL")
+    MinimumValueAmongData = min(Data,default="NULL")
     MaximumValueAmongData = max(Data,default="NULL")
     return {'Minimum value of the parameter': MinimumValueAmongData, 'Maximum value of the parameter': MaximumValueAmongData}
 
@@ -18,7 +18,7 @@ def FindMovingAverageOfDataRead(DataReadFromConsole):
 
 def PrintStatisticsOnConsole(Parameter,RangeOfDataRead,MovingAvgOfDataRead):
   StringToBePrinted = f'{Parameter}:{RangeOfDataRead},{MovingAvgOfDataRead}'
-  print(string)
+  print(StringToBePrinted)
 
 def ReadDataFromConsoleAndPrintStatistics():
   DataReadFromConsole = ReadBatteryParameterDataFromConsole()

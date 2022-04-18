@@ -6,7 +6,12 @@ BatteryParameters = ["Current Readings in milliAmps", "Temperature Readings in F
 def ReadBatteryParameterDataFromConsole():
     signal(SIGPIPE,SIG_DFL)
     LinesRead = sys.stdin.readlines()
-    return LinesRead  
+    StrippedData = []
+    for Reading in LinesRead:
+      Reading = Reading.strip('\n')
+      ReadingList = list(map(float,Reading.split(',')))
+      StrippedData.append(ReadingList)
+    return StrippedData
 
 def FindRangeFromDataRead(Data):
     MinimumValueAmongData = min(Data,default="NULL")

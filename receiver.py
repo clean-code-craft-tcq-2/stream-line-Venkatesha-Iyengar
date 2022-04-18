@@ -1,8 +1,10 @@
 import sys
+from signal import signal, SIGPIPE 
 
 BatteryParameters = ["Current Readings in milliAmps", "Temperature Readings in Farenheit"]
 
 def ReadBatteryParameterDataFromConsole():
+    signal(SIGPIPE)
     LinesRead = sys.stdin.readlines()
     return LinesRead  
 

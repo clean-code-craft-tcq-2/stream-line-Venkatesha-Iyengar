@@ -29,8 +29,9 @@ def ExtractBatteryParametersReadFromConsole(DataRead, BatteryParameter):
             return [BatteryParameterValue[index] for BatteryParameterValue in DataRead]
 
 def PrintStatisticsOnConsole(Parameter,RangeOfDataRead,MovingAvgOfDataRead):
-  StringToBePrinted = f'{Parameter}:{RangeOfDataRead},{MovingAvgOfDataRead}'
+  StringToBePrinted = f'{Parameter}:{RangeOfDataRead}'
   print(StringToBePrinted)
+  print("Moving average", {MovingAvgOfDataRead})
 
 def ReadDataFromConsoleAndPrintStatistics(AverageDataSize):
   DataReadFromConsole = ReadBatteryParameterDataFromConsole()

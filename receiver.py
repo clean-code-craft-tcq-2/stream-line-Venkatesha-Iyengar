@@ -19,7 +19,7 @@ def FindRangeFromDataRead(Data):
     return {'Minimum value of the parameter': MinimumValueAmongData, 'Maximum value of the parameter': MaximumValueAmongData}
 
 def FindMovingAverageOfDataRead(DataReadFromConsole):
-    DataStream = [DataReadFromConsole[index : index + 5] for index, value in enumerate(DataReadFromConsole) if index < len(DataReadFromConsole) - 5 + 1]
+    DataStream = [DataReadFromConsole[index : index + AverageDataSize] for index, value in enumerate(DataReadFromConsole) if index < len(DataReadFromConsole) - AverageDataSize + 1]
     MovingAvgOfDataRead = [round(sum(Data)/len(Data), 2) for Data in DataStream]
     return MovingAvgOfDataRead
 
@@ -27,9 +27,9 @@ def PrintStatisticsOnConsole(Parameter,RangeOfDataRead,MovingAvgOfDataRead):
   StringToBePrinted = f'{Parameter}:{RangeOfDataRead},{MovingAvgOfDataRead}'
   print(StringToBePrinted)
 
-def ReadDataFromConsoleAndPrintStatistics():
+def ReadDataFromConsoleAndPrintStatistics(AverageDataSize):
   DataReadFromConsole = ReadBatteryParameterDataFromConsole()
   for Parameter in BatteryParameters:
     RangeOfDataRead = FindRangeFromDataRead(DataReadFromConsole)
-    MovingAvgOfDataRead = FindMovingAverageOfDataRead(DataReadFromConsole)
+    MovingAvgOfDataRead = FindMovingAverageOfDataRead(DataReadFromConsole, AverageDataSize)
     PrintStatisticsOnConsole(Parameter,RangeOfDataRead,MovingAvgOfDataRead)

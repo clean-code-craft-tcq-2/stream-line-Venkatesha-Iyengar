@@ -36,6 +36,10 @@ jobs:
           path: ./htmlcov
           retention-days: 21
           
+      - name: Pipe
+        run: |
+          python sender.test.py | python receiver.test.py
+          
       - name: Receiver - Run and collect coverage
         run: |
           coverage run --branch receiver.test.py
@@ -48,6 +52,4 @@ jobs:
           path: ./htmlcov
           retention-days: 21
           
-        - name: Pipe
-        run: |
-          python sender.test.py | python receiver.test.py
+

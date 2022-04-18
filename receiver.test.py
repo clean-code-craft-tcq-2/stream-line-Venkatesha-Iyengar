@@ -14,4 +14,8 @@ class tdd_receiver_test(unittest.TestCase):
         MovingAvergae = FindMovingAverageOfDataRead(DataReadFromConsole,AverageDataSize)
         self.assertEqual(MovingAvergae,[20])
     
+    def Test_Receiver(self):
+        AverageDataSize = 5
+        ReadDataFromConsoleAndPrintStatistics(AverageDataSize)
+        
 unittest.main()

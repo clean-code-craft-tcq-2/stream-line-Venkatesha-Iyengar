@@ -18,7 +18,7 @@ def FindRangeFromDataRead(Data):
     MaximumValueAmongData = max(Data,default="NULL")
     return {'Minimum value of the parameter': MinimumValueAmongData, 'Maximum value of the parameter': MaximumValueAmongData}
 
-def FindMovingAverageOfDataRead(DataReadFromConsole):
+def FindMovingAverageOfDataRead(DataReadFromConsole,AverageDataSize):
     DataStream = [DataReadFromConsole[index : index + AverageDataSize] for index, value in enumerate(DataReadFromConsole) if index < len(DataReadFromConsole) - AverageDataSize + 1]
     MovingAvgOfDataRead = [round(sum(Data)/len(Data), 2) for Data in DataStream]
     return MovingAvgOfDataRead

@@ -8,7 +8,7 @@ def ReadBatteryParameterDataFromConsole():
 
 def FindRangeFromDataRead(Data):
     minimumValueAmongData = min(Data,default="NULL")
-    minimumValueAmongData = max(Data,default="NULL")
+    MaximumValueAmongData = max(Data,default="NULL")
     return {'Minimum value of the parameter': MinimumValueAmongData, 'Maximum value of the parameter': MaximumValueAmongData}
 
 def ReadDataFromConsoleAndPrintStatistics():

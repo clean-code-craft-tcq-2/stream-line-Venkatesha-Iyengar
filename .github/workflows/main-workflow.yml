@@ -47,3 +47,7 @@ jobs:
           name: coverage
           path: ./htmlcov
           retention-days: 21
+          
+        - name: Pipe
+        run: |
+          python sender.test.py | python receiver.test.py

@@ -27,9 +27,9 @@ class tdd_sender_test(unittest.TestCase):
         self.assertEqual(temp_conv_object.convert_celcius_to_farenheit(0),57.6)
 
     #Tests for sender
-    def test_send_data_to_console(self):
-        Sender_object = Sender()
-        self.assertEqual(Sender_object.send_data_to_console("All is well!"), "All is well!")
+    #def test_send_data_to_console(self):
+    #    Sender_object = Sender()
+    #    self.assertEqual(Sender_object.send_data_to_console("All is well!"), "All is well!")
 
     #Tests for sending simulated data
     def test_send_simulated_parameter_data_to_console(self):

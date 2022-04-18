@@ -16,6 +16,10 @@ def FindMovingAverageOfDataRead(DataReadFromConsole):
     MovingAvgOfDataRead = [round(sum(Data)/len(Data), 2) for Data in DataStream]
     return MovingAvgOfDataRead
 
+def PrintStatisticsOnConsole(Parameter,RangeOfDataRead,MovingAvgOfDataRead):
+  StringToBePrinted = f'{Parameter}:{RangeOfDataRead},{MovingAvgOfDataRead}'
+  print(string)
+
 def ReadDataFromConsoleAndPrintStatistics():
   DataReadFromConsole = ReadBatteryParameterDataFromConsole()
   for Parameter in BatteryParameters:

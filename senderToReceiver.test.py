@@ -1,8 +1,8 @@
 import unittest
 from receiver import *
 
-class tdd_receiver_test(unittest.TestCase):
-    def test_receiver(self):
+class tdd_senderToReceiver_test(unittest.TestCase):
+    def test_senderToReceiver(self):
         AverageDataSize = 5
         DataReadFromConsole = [10,20,30,40,0]
         ReadDataFromConsoleAndPrintStatistics(AverageDataSize)

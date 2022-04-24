@@ -38,12 +38,12 @@ jobs:
           
       - name: Sender | Receiver
         run: |
-          python sender.test.py | python receiver.test.py
+          python sender.test.py | python senderToreceiver.test.py
           coverage run --branch receiver.test.py
           coverage html
           coverage report
           
-      - name: Upload Receiver test coverage
+      - name: Upload Sender To Receiver test coverage
         uses: actions/upload-artifact@v2
         with:
           name: coverage

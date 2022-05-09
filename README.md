@@ -1,3 +1,5 @@
+# !!!! Please look into "Wiki" tab for more details !!!!
+
 # Streaming BMS Data
 
 This project is about sending and receiving BMS data.
